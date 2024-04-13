@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Mes</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+</head>
+<body>
+<div class="container mt-5">
+    <h1>Nombre del Mes</h1>
+    <form th:action="@{/Mes}" method="post" th:object="${MesModel}">
+        <div class="form-floating mb-3">
+            <label for="numero">Número de mes:</label>
+            <input type="number" class="form-control" id="numero" name="numero">
+        </div>
+        <button type="submit" class="btn btn-primary">OBTENER NOMBRE</button>
+        <div th:if="${mostrarMensaje}" class="alert alert-danger" role="alert">
+            <span th:text="${resultado} ?: ''"></span>
+        </div>
+    </form>
+</div>
+
+
+
+</body>
+</html>
